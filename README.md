@@ -9,6 +9,7 @@
 ![Languages](https://img.shields.io/badge/i18n-English%20%7C%20%E7%B9%81%E9%AB%94%20%7C%20%E7%AE%A1%E9%AB%94-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Version](https://img.shields.io/badge/version-1.1.0-informational)
+[![build](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml/badge.svg)](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml)
 
 <p align="center">
   <img src="docs/images/main-en.png" width="300" alt="Main screen, English">
