@@ -1,0 +1,16 @@
+[versions]
+agp = "8.7.3"
+conscrypt = "2.5.2"
+libadb = "1.0.1"
+bouncycastle = "1.70"
+androidxAnnotation = "1.9.1"
+
+[libraries]
+libadb = { group = "com.github.MuntashirAkon", name = "libadb-android", version.ref = "libadb" }
+conscrypt = { group = "org.conscrypt", name = "conscrypt-android", version.ref = "conscrypt" }
+bouncycastle-bcprov = { group = "org.bouncycastle", name = "bcprov-jdk15on", version.ref = "bouncycastle" }
+bouncycastle-bcpkix = { group = "org.bouncycastle", name = "bcpkix-jdk15on", version.ref = "bouncycastle" }
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "androidxAnnotation" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

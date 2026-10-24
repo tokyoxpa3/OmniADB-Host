@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  简体中文（zh-Hans / zh-CN / zh-SG …）。
+  繁體請見 values-zh；非中文語系一律回退到 values/（英文）。
+-->
+<resources>
+    <string name="app_name">OmniADB Host</string>
+    <string name="accessibility_desc">只在你按下「开始配对」后的 10 分钟内，读取系统「使用配对码配对设备」对话框上的 6 位配对码，用来免手动输入完成配对。不会读取其他界面，也不会记录或上传任何内容。</string>
+
+    <!-- 主界面 -->
+    <string name="title">OmniADB Host</string>
+    <string name="notif_warn">通知权限未开启：配对码输入框不会出现在通知栏（点此开启）</string>
+    <string name="btn_check_repair">立即检查并修复</string>
+    <string name="toast_check_scheduled">已安排检查</string>
+    <string name="btn_copy_connect">复制 adb connect 命令</string>
+    <string name="toast_copied">已复制：%1$s</string>
+    <string name="btn_battery_whitelist">把本应用加入电池优化白名单</string>
+    <string name="btn_wireless_settings">打开无线调试设置页</string>
+
+    <!-- 引导卡片：只讲「现在该做什么」 -->
+    <string name="guide_title_ok">运行中</string>
+    <string name="guide_desc_ok">电脑端执行：adb connect %1$s\n重启、WiFi 重连、屏幕休眠后都会自己恢复。%2$s</string>
+    <string name="guide_desc_ok_a11y_extra">\n自动读取配对码：已开启（下次重配不用抄 6 位数字）</string>
+    <string name="guide_btn_autoread">开启自动读取配对码（可选）</string>
+
+    <string name="guide_title_no_perm">权限丢失</string>
+    <string name="guide_desc_no_perm">ADB 现在还能用，但重启后不会自动恢复（多半是卸载后重装）。\n修复：开启「无线调试」，再点下面的按钮 —— 应用会自己补授权。\n或电脑重跑 omniadb setup／插 USB 执行 pm grant。</string>
+    <string name="guide_btn_repair_grant">立即检查并修复（会自动补授权）</string>
+    <string name="toast_repair_grant">已安排检查；若无线调试已开启，会自动补上权限</string>
+
+    <string name="guide_title_ready">权限已就绪，只差配对</string>
+    <string name="guide_desc_ready">点下面「开始配对」，然后到 开发者选项 → 无线调试 → 使用配对码配对设备。%1$s</string>
+    <string name="guide_desc_ready_a11y">\n配对码会自动读取，你不用抄。</string>
+    <string name="guide_desc_ready_manual">\n配对码会出现在通知栏，输进去就好。</string>
+
+    <string name="guide_title_first_run">首次设置</string>
+    <string name="guide_desc_first_run">配对一次就会自动取得权限，之后重启不用电脑。\n点下面「开始配对」→ 开发者选项 → 无线调试 → 使用配对码配对设备，把 6 位数字输进通知栏。</string>
+
+    <string name="btn_start_pair_a11y">开始配对（自动读取配对码）</string>
+    <string name="btn_start_pair_notif">开始配对（通知栏输入）</string>
+
+    <!-- 自动读取配对码 -->
+    <string name="a11y_status_on">自动读取配对码：已开启</string>
+    <string name="a11y_status_written">自动读取配对码：已写入设置但系统未绑定（点下面按钮处理）</string>
+    <string name="a11y_status_off">自动读取配对码：未开启（点下面按钮即可开启）</string>
+    <string name="btn_auto_read">自动读取配对码设置</string>
+
+    <!-- 配对区 -->
+    <string name="pair_title_repair">\n重新配对（只有凭证失效才需要）</string>
+    <string name="pair_title_first">\n一次性配对（只在第一次需要做）</string>
+    <string name="pair_help_a11y">1. 点下面按钮，应用会自动读取配对码\n2. 开发者选项 → 无线调试 → 使用配对码配对设备\n3. 看到 6 位数字就不用管，应用会自己提交</string>
+    <string name="pair_help_manual">1. 点下面按钮，应用会在通知栏放一个输入框\n2. 开发者选项 → 无线调试 → 使用配对码配对设备\n3. 下拉通知栏，把 6 位数字输进去提交\n   （配对码界面会保持打开，不会被关掉）</string>
+
+    <!-- 备用手动输入 -->
+    <string name="manual_title">【备用】手动输入配对码＋端口</string>
+    <string name="hint_code">6 位配对码，例如 123456</string>
+    <string name="hint_port">配对端口，例如 37123（界面显示的 10.8.0.2:37123 的那个数字）</string>
+    <string name="btn_manual_pair">手动配对</string>
+    <string name="toast_need_code_port">请先填入配对码与配对端口</string>
+
+    <string name="footer">配对完成后，这台手机重启、WiFi 重连、屏幕休眠后，\n应用都会自动把 ADB 拉回 5555 端口。\n电脑端只要 adb connect &lt;手机IP&gt;:5555 即可。</string>
+
+    <!-- 状态／信息 -->
+    <string name="info_paired">已配对：%1$s</string>
+    <string name="info_paired_yes">是</string>
+    <string name="info_paired_no">否（请先做一次性配对）</string>
+    <string name="info_ip">手机 IP：%1$s</string>
+    <string name="info_port">固定端口：%1$d</string>
+    <string name="info_repair_count">已修复次数：%1$d</string>
+    <string name="info_last_ok">上次正常：%1$s</string>
+    <string name="info_last_repair">上次修复：%1$s</string>
+    <string name="btn_enable_keepalive">启用常驻（当前：已停用）</string>
+    <string name="btn_disable_keepalive">停用常驻（当前：启用中）</string>
+
+    <!-- Toast -->
+    <string name="toast_pairing_started">已在通知栏放置输入框，接着请到无线调试页开启配对</string>
+    <string name="toast_pairing_now">配对中，请稍候…</string>
+    <string name="toast_no_notif_perm">没有通知权限，配对码输入框不会出现在通知栏。已为你打开通知设置。</string>
+    <string name="toast_no_perm_manual">没有写入系统设置的权限，改为手动开启。若开关是灰的：应用信息 → ⋮ → 允许受限制的设置</string>
+    <string name="toast_a11y_sent">已提交，正在等系统绑定…</string>
+    <string name="toast_a11y_on">已开启自动读取配对码</string>
+    <string name="toast_a11y_written">已写入设置，但系统还没绑定。请在无障碍设置里确认开关；若开关是灰的：应用信息 → ⋮ → 允许受限制的设置</string>
+    <string name="toast_a11y_manual">请手动到 设置 → 无障碍 → 已下载的服务</string>
+    <string name="toast_battery_manual">请手动到 设置 → 电池 → 不受限制 加入本应用</string>
+    <string name="toast_wireless_manual">请手动开启：设置 → 开发者选项 → 无线调试</string>
+    <string name="toast_notif_settings_manual">请手动到 设置 → 应用 → OmniADB Host → 通知 开启</string>
+
+    <!-- 状态标签（存储的是与语系无关的代码） -->
+    <string name="status_not_started">尚未启动</string>
+    <string name="status_ok">运行中</string>
+    <string name="status_attention">需要处理</string>
+    <string name="status_disabled">已停用</string>
+    <string name="status_wait_pair">待配对</string>
+    <string name="status_repairing">修复中</string>
+    <string name="status_pairing">配对中</string>
+    <string name="status_paired">配对成功</string>
+    <string name="status_granting">取得权限</string>
+
+    <!-- 状态说明 -->
+    <string name="detail_disabled">在应用内点「启用常驻」即可恢复</string>
+    <string name="detail_need_wifi_pair">请开启无线调试，并在应用内完成一次性配对</string>
+    <string name="detail_need_pair">请在应用内完成一次性配对（配对后会自动取得权限并固定端口）</string>
+    <string name="detail_perm_missing">缺少 WRITE_SECURE_SETTINGS 权限（自助授权需要无线调试开着）。开启无线调试后点「立即检查并修复」即可自动补上；或 adb shell pm grant %1$s android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="detail_wait_wifi_failed">等不到 WiFi 连接，稍后自动重试</string>
+    <string name="detail_reopen_debug">重新开启无线调试</string>
+    <string name="detail_debug_opened">%1$s（无线调试已开启）</string>
+    <string name="detail_find_port">寻找无线调试端口</string>
+    <string name="detail_port_not_found">找不到无线调试端口</string>
+    <string name="detail_switch_port">切换到固定端口 %1$d</string>
+    <string name="detail_switch_failed">已提交切换命令但仍连不上端口 %1$d</string>
+    <string name="detail_repair_exception">修复失败：%1$s</string>
+    <string name="detail_ok">%1$s</string>
+    <string name="detail_ok_no_perm">%1$s\n（缺 WRITE_SECURE_SETTINGS：重启后不会自动恢复。请执行 adb shell pm grant %2$s android.permission.WRITE_SECURE_SETTINGS）</string>
+    <string name="detail_grant_self">通过本机 ADB 自助授权</string>
+    <string name="detail_pair_trust">与本机 adbd 建立信任关系</string>
+    <string name="detail_pair_trust_port">与本机 adbd 建立信任关系（端口 %1$d）</string>
+    <string name="detail_pair_failed">配对失败，请确认配对码与端口正确且界面未关闭</string>
+    <string name="detail_pair_ok">正在取得权限并切换到固定端口…</string>
+
+    <!-- 常驻通知 -->
+    <string name="notif_channel_name">OmniADB 常驻状态</string>
+    <string name="notif_channel_desc">显示 ADB 常驻服务的运行状态</string>
+    <string name="notif_title">OmniADB 常驻</string>
+    <string name="notif_starting">启动中…</string>
+    <string name="notif_disabled">已停用</string>
+    <string name="notif_wait_pair">待配对：请开启无线调试并完成配对</string>
+    <string name="notif_repairing">修复中…</string>
+    <string name="notif_ok">运行中 %1$s</string>
+    <string name="notif_ok_no_perm">运行中 %1$s（缺权限，重启不自动）</string>
+    <string name="notif_attention">需要处理：%1$s</string>
+
+    <!-- 配对通知 -->
+    <string name="pair_channel_name">OmniADB 配对</string>
+    <string name="pair_channel_desc">一次性配对时，在通知栏输入配对码</string>
+    <string name="pair_notif_title">OmniADB：输入无线调试配对码</string>
+    <string name="pair_action_label">输入配对码</string>
+    <string name="pair_input_label">6 位配对码</string>
+    <string name="pair_hint_searching">正在寻找配对端口…请到无线调试页开启「使用配对码配对设备」</string>
+    <string name="pair_hint_found">已找到配对端口 %1$d，请下拉此通知输入 6 位配对码</string>
+    <string name="pair_hint_go">请到 无线调试 → 使用配对码配对设备，再下拉此通知输入配对码</string>
+    <string name="pair_notif_pairing">配对中…请稍候</string>
+    <string name="pair_err_no_port">找不到配对端口，请确认「使用配对码配对设备」界面还开着</string>
+    <string name="pair_err_wrong_code">配对失败，请确认配对码正确</string>
+    <string name="pair_err_server_closed">配对服务器已关闭，请重新开启配对界面</string>
+</resources>

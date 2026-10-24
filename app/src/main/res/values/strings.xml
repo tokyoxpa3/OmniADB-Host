@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English is the default resource set: any system locale that is NOT Chinese
+  falls back to this file.
+
+  Chinese lives in values-zh (Traditional) and values-b+zh+Hans (Simplified),
+  so a phone set to zh-Hant-TW / zh-Hans-CN shows Chinese and everything else
+  (en-US, ja-JP, de-DE …) shows English. No in-app language switch is needed —
+  Android picks the right file by itself.
+-->
+<resources>
+    <string name="app_name">OmniADB Host</string>
+    <!-- Shown verbatim in the system Accessibility settings: must be honest about
+         only reading the 6 digits of the pairing dialog. -->
+    <string name="accessibility_desc">Reads the 6-digit pairing code from the system \"Pair device with pairing code\" dialog, only within 10 minutes after you tap Start pairing, so you do not have to type it. It never reads other screens and never stores or uploads anything.</string>
+
+    <!-- Main screen -->
+    <string name="title">OmniADB Host</string>
+    <string name="notif_warn">Notifications are off: the pairing-code box cannot appear in the shade (tap to fix)</string>
+    <string name="btn_check_repair">Check and repair now</string>
+    <string name="toast_check_scheduled">Repair scheduled</string>
+    <string name="btn_copy_connect">Copy adb connect command</string>
+    <string name="toast_copied">Copied: %1$s</string>
+    <string name="btn_battery_whitelist">Add this app to the battery whitelist</string>
+    <string name="btn_wireless_settings">Open Wireless debugging settings</string>
+
+    <!-- Guide card: only the one step that matters right now -->
+    <string name="guide_title_ok">Running</string>
+    <string name="guide_desc_ok">On your computer run: adb connect %1$s\nIt recovers by itself after a reboot, a Wi-Fi reconnect or sleep.%2$s</string>
+    <string name="guide_desc_ok_a11y_extra">\nAuto-read pairing code: on (no need to copy the 6 digits next time)</string>
+    <string name="guide_btn_autoread">Turn on auto-read pairing code (optional)</string>
+
+    <string name="guide_title_no_perm">Permission lost</string>
+    <string name="guide_desc_no_perm">ADB works right now, but it will not come back after a reboot (usually after uninstall + reinstall).\nFix: turn on Wireless debugging, then tap the button below — the app re-grants itself.\nOr re-run omniadb setup on the computer / run pm grant over USB.</string>
+    <string name="guide_btn_repair_grant">Check and repair now (re-grants automatically)</string>
+    <string name="toast_repair_grant">Repair scheduled; if Wireless debugging is on, the permission will be granted automatically</string>
+
+    <string name="guide_title_ready">Permission ready — pairing is all that is left</string>
+    <string name="guide_desc_ready">Tap \"Start pairing\" below, then go to Developer options → Wireless debugging → Pair device with pairing code.%1$s</string>
+    <string name="guide_desc_ready_a11y">\nThe code is read automatically, so you do not have to copy it.</string>
+    <string name="guide_desc_ready_manual">\nThe code appears in the notification shade; type it there.</string>
+
+    <string name="guide_title_first_run">First-time setup</string>
+    <string name="guide_desc_first_run">One pairing is enough to obtain the permission; after that no computer is needed.\nTap \"Start pairing\" → Developer options → Wireless debugging → Pair device with pairing code, then type the 6 digits in the notification shade.</string>
+
+    <string name="btn_start_pair_a11y">Start pairing (code read automatically)</string>
+    <string name="btn_start_pair_notif">Start pairing (type in the shade)</string>
+
+    <!-- Auto-read pairing code -->
+    <string name="a11y_status_on">Auto-read pairing code: on</string>
+    <string name="a11y_status_written">Auto-read pairing code: written to settings but not bound (tap the button below)</string>
+    <string name="a11y_status_off">Auto-read pairing code: off (tap the button below to turn it on)</string>
+    <string name="btn_auto_read">Set up auto-read pairing code</string>
+
+    <!-- Pairing section -->
+    <string name="pair_title_repair">\nRe-pair (only needed when the credential expires)</string>
+    <string name="pair_title_first">\nOne-time pairing (needed only once)</string>
+    <string name="pair_help_a11y">1. Tap the button below; the app reads the code by itself\n2. Developer options → Wireless debugging → Pair device with pairing code\n3. When the 6 digits appear you can ignore them, the app submits them</string>
+    <string name="pair_help_manual">1. Tap the button below; the app puts an input box in the shade\n2. Developer options → Wireless debugging → Pair device with pairing code\n3. Pull down the shade, type the 6 digits and submit\n   (the pairing screen stays open, it will not be closed)</string>
+
+    <!-- Manual fallback -->
+    <string name="manual_title">[Fallback] Enter the pairing code and port manually</string>
+    <string name="hint_code">6-digit pairing code, e.g. 123456</string>
+    <string name="hint_port">Pairing port, e.g. 37123 (the number in 10.8.0.2:37123)</string>
+    <string name="btn_manual_pair">Pair manually</string>
+    <string name="toast_need_code_port">Enter the pairing code and port first</string>
+
+    <string name="footer">Once paired, this phone brings ADB back to port 5555 by itself after a reboot, a Wi-Fi reconnect or sleep.\nOn the computer just run: adb connect &lt;phone IP&gt;:5555</string>
+
+    <!-- Status / info block -->
+    <string name="info_paired">Paired: %1$s</string>
+    <string name="info_paired_yes">yes</string>
+    <string name="info_paired_no">no (do the one-time pairing first)</string>
+    <string name="info_ip">Phone IP: %1$s</string>
+    <string name="info_port">Fixed port: %1$d</string>
+    <string name="info_repair_count">Repairs: %1$d</string>
+    <string name="info_last_ok">Last healthy: %1$s</string>
+    <string name="info_last_repair">Last repair: %1$s</string>
+    <string name="btn_enable_keepalive">Enable keep-alive (currently: off)</string>
+    <string name="btn_disable_keepalive">Disable keep-alive (currently: on)</string>
+
+    <!-- Toasts -->
+    <string name="toast_pairing_started">Input box placed in the notification shade. Next, open the Wireless debugging page to pair</string>
+    <string name="toast_pairing_now">Pairing, please wait…</string>
+    <string name="toast_no_notif_perm">Without notification permission the pairing box cannot appear in the shade. Notification settings opened.</string>
+    <string name="toast_no_perm_manual">No permission to write system settings, switching to manual. If the switch is greyed out: App info → ⋮ → Allow restricted settings</string>
+    <string name="toast_a11y_sent">Sent, waiting for the system to bind…</string>
+    <string name="toast_a11y_on">Auto-read pairing code is on</string>
+    <string name="toast_a11y_written">Settings written, but the system has not bound the service yet. Check the switch in Accessibility; if it is greyed out: App info → ⋮ → Allow restricted settings</string>
+    <string name="toast_a11y_manual">Open Settings → Accessibility → Downloaded services</string>
+    <string name="toast_battery_manual">Add this app manually: Settings → Battery → Unrestricted</string>
+    <string name="toast_wireless_manual">Open Settings → Developer options → Wireless debugging</string>
+    <string name="toast_notif_settings_manual">Open Settings → Apps → OmniADB Host → Notifications</string>
+
+    <!-- Status labels (stored as locale-independent codes) -->
+    <string name="status_not_started">Not started</string>
+    <string name="status_ok">Running</string>
+    <string name="status_attention">Needs attention</string>
+    <string name="status_disabled">Disabled</string>
+    <string name="status_wait_pair">Waiting for pairing</string>
+    <string name="status_repairing">Repairing</string>
+    <string name="status_pairing">Pairing</string>
+    <string name="status_paired">Paired</string>
+    <string name="status_granting">Granting permission</string>
+
+    <!-- Status details -->
+    <string name="detail_disabled">Tap \"Enable keep-alive\" in the app to resume</string>
+    <string name="detail_need_wifi_pair">Turn on Wireless debugging and finish the one-time pairing in the app</string>
+    <string name="detail_need_pair">Finish the one-time pairing in the app (pairing also grants the permission and pins the port)</string>
+    <string name="detail_perm_missing">Missing WRITE_SECURE_SETTINGS (self-granting needs Wireless debugging to be on). Turn it on and tap \"Check and repair now\", or run: adb shell pm grant %1$s android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="detail_wait_wifi_failed">Wi-Fi did not come up; retrying automatically later</string>
+    <string name="detail_reopen_debug">Re-enabling Wireless debugging</string>
+    <string name="detail_debug_opened">%1$s (Wireless debugging is on)</string>
+    <string name="detail_find_port">Looking for the Wireless debugging port</string>
+    <string name="detail_port_not_found">Wireless debugging port not found</string>
+    <string name="detail_switch_port">Switching to the fixed port %1$d</string>
+    <string name="detail_switch_failed">Switch command sent, but port %1$d is still unreachable</string>
+    <string name="detail_repair_exception">Repair failed: %1$s</string>
+    <string name="detail_ok">%1$s</string>
+    <string name="detail_ok_no_perm">%1$s\n(No WRITE_SECURE_SETTINGS: it will not recover after a reboot. Run: adb shell pm grant %2$s android.permission.WRITE_SECURE_SETTINGS)</string>
+    <string name="detail_grant_self">Self-granting through the local ADB connection</string>
+    <string name="detail_pair_trust">Establishing trust with the local adbd</string>
+    <string name="detail_pair_trust_port">Establishing trust with the local adbd (port %1$d)</string>
+    <string name="detail_pair_failed">Pairing failed. Check that the code and port are correct and that the dialog stayed open</string>
+    <string name="detail_pair_ok">Getting the permission and switching to the fixed port…</string>
+
+    <!-- Keep-alive notification -->
+    <string name="notif_channel_name">OmniADB keep-alive</string>
+    <string name="notif_channel_desc">Shows the state of the ADB keep-alive service</string>
+    <string name="notif_title">OmniADB keep-alive</string>
+    <string name="notif_starting">Starting…</string>
+    <string name="notif_disabled">Disabled</string>
+    <string name="notif_wait_pair">Waiting for pairing: turn on Wireless debugging and pair</string>
+    <string name="notif_repairing">Repairing…</string>
+    <string name="notif_ok">Running %1$s</string>
+    <string name="notif_ok_no_perm">Running %1$s (no permission, will not auto-recover after a reboot)</string>
+    <string name="notif_attention">Needs attention: %1$s</string>
+
+    <!-- Pairing notification -->
+    <string name="pair_channel_name">OmniADB pairing</string>
+    <string name="pair_channel_desc">Type the pairing code in the notification shade during one-time pairing</string>
+    <string name="pair_notif_title">OmniADB: enter the wireless debugging pairing code</string>
+    <string name="pair_action_label">Enter code</string>
+    <string name="pair_input_label">6-digit code</string>
+    <string name="pair_hint_searching">Looking for the pairing port… open \"Pair device with pairing code\" in Wireless debugging</string>
+    <string name="pair_hint_found">Pairing port %1$d found. Pull down this notification and enter the 6-digit code</string>
+    <string name="pair_hint_go">Go to Wireless debugging → Pair device with pairing code, then pull down this notification and enter the code</string>
+    <string name="pair_notif_pairing">Pairing… please wait</string>
+    <string name="pair_err_no_port">Pairing port not found. Keep the \"Pair device with pairing code\" screen open</string>
+    <string name="pair_err_wrong_code">Pairing failed. Check the pairing code</string>
+    <string name="pair_err_server_closed">The pairing server closed. Reopen the pairing screen</string>
+</resources>

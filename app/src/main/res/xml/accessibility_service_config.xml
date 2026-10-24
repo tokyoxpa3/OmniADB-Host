@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  無障礙服務設定。
+
+  ★ packageNames 只留 com.android.settings —— 這是刻意把權限範圍縮到最小：
+    服務只會收到「系統設定」的事件，其他 App 的畫面事件根本不會送到這裡。
+  ★ canRetrieveWindowContent 是讀節點文字的必要條件（配對碼就是一個 TextView）。
+  ★ typeWindowContentChanged 不能省：對話框是「先出現、碼才填進去」，
+    只聽 typeWindowStateChanged 會漏掉碼出現的那一刻。
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_desc"
+    android:notificationTimeout="100"
+    android:packageNames="com.android.settings"
+    android:settingsActivity="com.omniadb.host.MainActivity" />

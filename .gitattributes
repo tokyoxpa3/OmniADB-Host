@@ -1,0 +1,5 @@
+# Keep shell scripts LF so the wrapper still runs on Linux/macOS and CI.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary

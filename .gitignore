@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Machine-specific SDK location
+local.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+captures/
+
+# Build output / signing material
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# OS noise
+.DS_Store
+Thumbs.db

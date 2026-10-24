@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  繁體中文（zh-Hant / zh-TW / zh-HK / zh-MO …）。
+  簡體請見 values-b+zh+Hans；非中文語系一律回退到 values/（英文）。
+-->
+<resources>
+    <string name="app_name">OmniADB Host</string>
+    <string name="accessibility_desc">只在你按下「開始配對」後的 10 分鐘內，讀取系統「使用配對碼配對裝置」對話框上的 6 位數配對碼，用來免手動輸入完成配對。不會讀取其他畫面，也不會記錄或上傳任何內容。</string>
+
+    <!-- 主畫面 -->
+    <string name="title">OmniADB Host</string>
+    <string name="notif_warn">通知權限未開啟：配對碼輸入框不會出現在通知欄（點此開啟）</string>
+    <string name="btn_check_repair">立即檢查並修復</string>
+    <string name="toast_check_scheduled">已排程檢查</string>
+    <string name="btn_copy_connect">複製 adb connect 指令</string>
+    <string name="toast_copied">已複製：%1$s</string>
+    <string name="btn_battery_whitelist">把本 App 加入電池優化白名單</string>
+    <string name="btn_wireless_settings">開啟無線偵錯設定頁</string>
+
+    <!-- 引導卡片：只講「現在該做什麼」 -->
+    <string name="guide_title_ok">運作中</string>
+    <string name="guide_desc_ok">電腦端執行：adb connect %1$s\n重開機、WiFi 重連、螢幕休眠後都會自己恢復。%2$s</string>
+    <string name="guide_desc_ok_a11y_extra">\n自動讀取配對碼：已開啟（下次重配不用抄 6 位數）</string>
+    <string name="guide_btn_autoread">開啟自動讀取配對碼（可選）</string>
+
+    <string name="guide_title_no_perm">權限遺失</string>
+    <string name="guide_desc_no_perm">ADB 現在還能用，但重開機後不會自動恢復（多半是解除安裝後重裝）。\n修復：開啟「無線偵錯」，再點下面的按鈕 —— App 會自己補授權。\n或電腦重跑 omniadb setup／插 USB 執行 pm grant。</string>
+    <string name="guide_btn_repair_grant">立即檢查並修復（會自動補授權）</string>
+    <string name="toast_repair_grant">已排程檢查；若無線偵錯已開啟，會自動補上權限</string>
+
+    <string name="guide_title_ready">權限已就緒，只差配對</string>
+    <string name="guide_desc_ready">按下面「開始配對」，然後到 開發者選項 → 無線偵錯 → 使用配對碼配對裝置。%1$s</string>
+    <string name="guide_desc_ready_a11y">\n配對碼會自動讀取，你不用抄。</string>
+    <string name="guide_desc_ready_manual">\n配對碼會出現在通知欄，打進去就好。</string>
+
+    <string name="guide_title_first_run">首次設定</string>
+    <string name="guide_desc_first_run">配對一次就會自動取得權限，之後重開機不用電腦。\n按下面「開始配對」→ 開發者選項 → 無線偵錯 → 使用配對碼配對裝置，把 6 位數打進通知欄。</string>
+
+    <string name="btn_start_pair_a11y">開始配對（自動讀取配對碼）</string>
+    <string name="btn_start_pair_notif">開始配對（通知欄輸入）</string>
+
+    <!-- 自動讀取配對碼 -->
+    <string name="a11y_status_on">自動讀取配對碼：已開啟</string>
+    <string name="a11y_status_written">自動讀取配對碼：已寫入設定但系統未綁定（點下面按鈕處理）</string>
+    <string name="a11y_status_off">自動讀取配對碼：未開啟（點下面按鈕即可開啟）</string>
+    <string name="btn_auto_read">自動讀取配對碼設定</string>
+
+    <!-- 配對區 -->
+    <string name="pair_title_repair">\n重新配對（只有憑證失效才需要）</string>
+    <string name="pair_title_first">\n一次性配對（只在第一次需要做）</string>
+    <string name="pair_help_a11y">1. 按下面按鈕，App 會自動讀取配對碼\n2. 開發者選項 → 無線偵錯 → 使用配對碼配對裝置\n3. 看到 6 位數就不用管，App 會自己送出</string>
+    <string name="pair_help_manual">1. 按下面按鈕，App 會在通知欄放一個輸入框\n2. 開發者選項 → 無線偵錯 → 使用配對碼配對裝置\n3. 下拉通知欄，把 6 位數打進去送出\n   （配對碼畫面會保持開著，不會被關掉）</string>
+
+    <!-- 備用手動輸入 -->
+    <string name="manual_title">【備用】手動輸入配對碼＋埠</string>
+    <string name="hint_code">6 位數配對碼，例如 123456</string>
+    <string name="hint_port">配對埠，例如 37123（畫面顯示的 10.8.0.2:37123 的那個數字）</string>
+    <string name="btn_manual_pair">手動配對</string>
+    <string name="toast_need_code_port">請先填入配對碼與配對埠</string>
+
+    <string name="footer">配對完成後，這支手機重開機、WiFi 重連、螢幕休眠後，\nApp 都會自動把 ADB 拉回 5555 埠。\n電腦端只要 adb connect &lt;手機IP&gt;:5555 即可。</string>
+
+    <!-- 狀態／資訊 -->
+    <string name="info_paired">已配對：%1$s</string>
+    <string name="info_paired_yes">是</string>
+    <string name="info_paired_no">否（請先做一次性配對）</string>
+    <string name="info_ip">手機 IP：%1$s</string>
+    <string name="info_port">固定埠：%1$d</string>
+    <string name="info_repair_count">已修復次數：%1$d</string>
+    <string name="info_last_ok">上次正常：%1$s</string>
+    <string name="info_last_repair">上次修復：%1$s</string>
+    <string name="btn_enable_keepalive">啟用常駐（目前：已停用）</string>
+    <string name="btn_disable_keepalive">停用常駐（目前：啟用中）</string>
+
+    <!-- Toast -->
+    <string name="toast_pairing_started">已放置通知欄輸入框，接著請到無線偵錯頁開啟配對</string>
+    <string name="toast_pairing_now">配對中，請稍候…</string>
+    <string name="toast_no_notif_perm">沒有通知權限，配對碼輸入框不會出現在通知欄。已為你打開通知設定。</string>
+    <string name="toast_no_perm_manual">沒有寫入系統設定的權限，改由手動開啟。若開關是灰的：應用程式資訊 → ⋮ → 允許受限制的設定</string>
+    <string name="toast_a11y_sent">已送出，正在等系統綁定…</string>
+    <string name="toast_a11y_on">已開啟自動讀取配對碼</string>
+    <string name="toast_a11y_written">已寫入設定，但系統還沒綁定。請在無障礙設定裡確認開關；若開關是灰的：應用程式資訊 → ⋮ → 允許受限制的設定</string>
+    <string name="toast_a11y_manual">請手動到 設定 → 無障礙 → 已下載的服務</string>
+    <string name="toast_battery_manual">請手動到 設定 → 電池 → 不受限制 加入本 App</string>
+    <string name="toast_wireless_manual">請手動開啟：設定 → 開發者選項 → 無線偵錯</string>
+    <string name="toast_notif_settings_manual">請手動到 設定 → 應用程式 → OmniADB Host → 通知 開啟</string>
+
+    <!-- 狀態標籤（儲存的是語系無關的代碼） -->
+    <string name="status_not_started">尚未啟動</string>
+    <string name="status_ok">運作中</string>
+    <string name="status_attention">需要處理</string>
+    <string name="status_disabled">已停用</string>
+    <string name="status_wait_pair">待配對</string>
+    <string name="status_repairing">修復中</string>
+    <string name="status_pairing">配對中</string>
+    <string name="status_paired">配對成功</string>
+    <string name="status_granting">取得權限</string>
+
+    <!-- 狀態說明 -->
+    <string name="detail_disabled">在 App 內按「啟用常駐」即可恢復</string>
+    <string name="detail_need_wifi_pair">請開啟無線偵錯，並在 App 內完成一次性配對</string>
+    <string name="detail_need_pair">請在 App 內完成一次性配對（配對後會自動取得權限並釘埠）</string>
+    <string name="detail_perm_missing">缺少 WRITE_SECURE_SETTINGS 權限（自助授權需要無線偵錯開著）。開啟無線偵錯後按「立即檢查並修復」即可自動補上；或 adb shell pm grant %1$s android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="detail_wait_wifi_failed">等不到 WiFi 連線，稍後自動重試</string>
+    <string name="detail_reopen_debug">重新開啟無線偵錯</string>
+    <string name="detail_debug_opened">%1$s（無線偵錯已開啟）</string>
+    <string name="detail_find_port">尋找無線偵錯埠號</string>
+    <string name="detail_port_not_found">找不到無線偵錯埠號</string>
+    <string name="detail_switch_port">切換到固定埠 %1$d</string>
+    <string name="detail_switch_failed">已送出切換指令但仍連不上埠 %1$d</string>
+    <string name="detail_repair_exception">修復失敗：%1$s</string>
+    <string name="detail_ok">%1$s</string>
+    <string name="detail_ok_no_perm">%1$s\n（缺 WRITE_SECURE_SETTINGS：重開機後不會自動恢復。請執行 adb shell pm grant %2$s android.permission.WRITE_SECURE_SETTINGS）</string>
+    <string name="detail_grant_self">透過本機 ADB 自助授權</string>
+    <string name="detail_pair_trust">與本機 adbd 建立信任關係</string>
+    <string name="detail_pair_trust_port">與本機 adbd 建立信任關係（埠 %1$d）</string>
+    <string name="detail_pair_failed">配對失敗，請確認配對碼與埠號正確且畫面未關閉</string>
+    <string name="detail_pair_ok">正在取得權限並切換到固定埠…</string>
+
+    <!-- 常駐通知 -->
+    <string name="notif_channel_name">OmniADB 常駐狀態</string>
+    <string name="notif_channel_desc">顯示 ADB 常駐服務的運作狀態</string>
+    <string name="notif_title">OmniADB 常駐</string>
+    <string name="notif_starting">啟動中…</string>
+    <string name="notif_disabled">已停用</string>
+    <string name="notif_wait_pair">待配對：請開啟無線偵錯並完成配對</string>
+    <string name="notif_repairing">修復中…</string>
+    <string name="notif_ok">運作中 %1$s</string>
+    <string name="notif_ok_no_perm">運作中 %1$s（缺權限，重開機不自動）</string>
+    <string name="notif_attention">需要處理：%1$s</string>
+
+    <!-- 配對通知 -->
+    <string name="pair_channel_name">OmniADB 配對</string>
+    <string name="pair_channel_desc">一次性配對時，在通知欄輸入配對碼</string>
+    <string name="pair_notif_title">OmniADB：輸入無線偵錯配對碼</string>
+    <string name="pair_action_label">輸入配對碼</string>
+    <string name="pair_input_label">6 位數配對碼</string>
+    <string name="pair_hint_searching">正在尋找配對埠…請到無線偵錯頁開啟「使用配對碼配對裝置」</string>
+    <string name="pair_hint_found">已找到配對埠 %1$d，請下拉此通知輸入 6 位數配對碼</string>
+    <string name="pair_hint_go">請到 無線偵錯 → 使用配對碼配對裝置，再下拉此通知輸入配對碼</string>
+    <string name="pair_notif_pairing">配對中…請稍候</string>
+    <string name="pair_err_no_port">找不到配對埠，請確認「使用配對碼配對裝置」畫面還開著</string>
+    <string name="pair_err_wrong_code">配對失敗，請確認配對碼正確</string>
+    <string name="pair_err_server_closed">配對伺服器已關閉，請重新開啟配對畫面</string>
+</resources>
