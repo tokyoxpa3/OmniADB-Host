@@ -10,13 +10,17 @@ android {
         applicationId = "com.omniadb.host"
         minSdk = 26
         targetSdk = 34
+        // 1.1.1：只換簽章金鑰 —— 改用專案固定的 release 金鑰（repo 外的 keys/），
+        //        不再用「每台機器一份」的 debug 金鑰。功能與 1.1.0 完全相同。
+        //        已安裝 1.1.0 的人必須先卸載才能裝這一版（簽章不同，Android 不
+        //        接受就地更新）。
         // 1.1.0：中英雙語（依系統語系自動切換，中文含繁簡）。狀態文字改成
         //        語系無關的代碼，顯示時才翻譯，切換語言不用重啟服務。
         // 1.0.1：修掉桌面圖示右上角永遠掛著「1」的角標（常駐通知改用新頻道
         //        adb_always_on_v2，showBadge=false）。舊頻道行為鎖死改不掉，
         //        只能換 ID，所以 versionCode 也一起往上，方便確認裝到的是新版。
-        versionCode = 3
-        versionName = "1.1.0"
+        versionCode = 4
+        versionName = "1.1.1"
     }
 
     // 固定的 release 簽章金鑰（keystore 放 repo 外的 keys/，路徑與密碼由

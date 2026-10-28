@@ -8,7 +8,7 @@
 ![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3DDC84?logo=android&logoColor=white)
 ![Languages](https://img.shields.io/badge/i18n-English%20%7C%20%E7%B9%81%E9%AB%94%20%7C%20%E7%AE%A1%E9%AB%94-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Version](https://img.shields.io/badge/version-1.1.0-informational)
+![Version](https://img.shields.io/badge/version-1.1.1-informational)
 [![build](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml/badge.svg)](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml)
 
 <p align="center">
@@ -94,7 +94,7 @@ port 5555 and verifies the result.
 ### B. Plain `adb` (sideload)
 
 ```bash
-adb install -r OmniADB-Host-1.1.0.apk
+adb install -r OmniADB-Host-1.1.1.apk
 adb shell am start -n com.omniadb.host/.MainActivity   # starts the keep-alive service
 ```
 
@@ -115,8 +115,10 @@ echo "sdk.dir=/path/to/Android/Sdk" > local.properties
 # → app/build/outputs/apk/release/app-release.apk
 ```
 
-Requires JDK 17, Android SDK 35 (`compileSdk 35`, `minSdk 26`). The release build is
-signed with the debug key so it can be sideloaded directly.
+Requires JDK 17, Android SDK 35 (`compileSdk 35`, `minSdk 26`). Official builds are signed with
+a fixed release key that lives outside the repository (read from `keystore.properties`, already
+in `.gitignore`); a clone without that file falls back to your local debug key, so the APK you
+build **will not install over the official one** — uninstall first.
 
 ## First run: pair once
 

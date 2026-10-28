@@ -8,7 +8,7 @@
 ![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3DDC84?logo=android&logoColor=white)
 ![Languages](https://img.shields.io/badge/i18n-English%20%7C%20%E7%B9%81%E9%AB%94%20%7C%20%E7%AE%A1%E9%AB%94-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Version](https://img.shields.io/badge/version-1.1.0-informational)
+![Version](https://img.shields.io/badge/version-1.1.1-informational)
 [![build](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml/badge.svg)](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml)
 
 <p align="center">
@@ -89,7 +89,7 @@ CLI 會建置並推送這個 App、授權、拉起常駐、釘埠、再驗證結
 ### B. 純 `adb`（側載）
 
 ```bash
-adb install -r OmniADB-Host-1.1.0.apk
+adb install -r OmniADB-Host-1.1.1.apk
 adb shell am start -n com.omniadb.host/.MainActivity   # 順便把常駐服務叫起來
 ```
 
@@ -110,8 +110,10 @@ echo "sdk.dir=/path/to/Android/Sdk" > local.properties
 # → app/build/outputs/apk/release/app-release.apk
 ```
 
-需要 JDK 17、Android SDK 35（`compileSdk 35`、`minSdk 26`）。release 用 debug 金鑰簽章，
-可以直接側載安裝。
+需要 JDK 17、Android SDK 35（`compileSdk 35`、`minSdk 26`）。正式發佈的 APK 用一把固定的
+release 金鑰簽章，金鑰檔放在 repo 外（路徑與密碼由 `keystore.properties` 指定，該檔已
+`.gitignore`）；沒有那個檔案時會退回你本機的 debug 金鑰，所以自己建的 APK **蓋不過官方版**，
+要裝得先卸載。
 
 ## 首次設定：配對一次
 
