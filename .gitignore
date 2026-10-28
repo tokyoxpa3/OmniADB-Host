@@ -17,6 +17,7 @@ captures/
 *.aab
 *.jks
 *.keystore
+keystore.properties
 
 # OS noise
 .DS_Store
