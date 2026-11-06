@@ -8,7 +8,7 @@
 ![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3DDC84?logo=android&logoColor=white)
 ![Languages](https://img.shields.io/badge/i18n-English%20%7C%20%E7%B9%81%E9%AB%94%20%7C%20%E7%AE%A1%E9%AB%94-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Version](https://img.shields.io/badge/version-1.1.1-informational)
+![Version](https://img.shields.io/badge/version-1.1.2-informational)
 [![build](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml/badge.svg)](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml)
 
 <p align="center">
@@ -45,6 +45,7 @@ This app is that someone. It runs on the phone, watches the state, and repairs i
 | **One-time pairing** | Puts a pairing-code input box in the notification shade and finds the pairing port via mDNS, so you never type a port number. |
 | **Auto-read pairing code** | An accessibility service reads the 6 digits from the system pairing dialog — only during the 10 minutes after you tap *Start pairing*. |
 | **i18n** | Chinese (Traditional & Simplified) or English, chosen automatically from the system language. |
+| **Relay bridge** | An exported `ContentProvider` (`com.omniadb.host.relay`) lets [5G-Proxy Tailnet Relay](https://github.com/tokyoxpa3/5G-Proxy-Tailnet-Relay) toggle airplane mode through this app's local adbd — that app then needs neither root nor its own ADB key. Only four hard-coded methods, and only the `com.tokyoxpa3.tailnetrelay` package may call it. |
 
 ## How it works
 
@@ -94,7 +95,7 @@ port 5555 and verifies the result.
 ### B. Plain `adb` (sideload)
 
 ```bash
-adb install -r OmniADB-Host-1.1.1.apk
+adb install -r OmniADB-Host-1.1.2.apk
 adb shell am start -n com.omniadb.host/.MainActivity   # starts the keep-alive service
 ```
 

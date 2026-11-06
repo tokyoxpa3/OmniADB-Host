@@ -8,7 +8,7 @@
 ![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3DDC84?logo=android&logoColor=white)
 ![Languages](https://img.shields.io/badge/i18n-English%20%7C%20%E7%B9%81%E9%AB%94%20%7C%20%E7%AE%A1%E9%AB%94-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Version](https://img.shields.io/badge/version-1.1.1-informational)
+![Version](https://img.shields.io/badge/version-1.1.2-informational)
 [![build](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml/badge.svg)](https://github.com/tokyoxpa3/OmniADB-Host/actions/workflows/build.yml)
 
 <p align="center">
@@ -44,6 +44,7 @@ Android 的「無線偵錯」開關**每次重開機都會自己關掉**。所�
 | **一次性配對** | 在通知欄放配對碼輸入框，並用 mDNS 找配對埠 —— 你**不用抄埠號**。 |
 | **自動讀取配對碼** | 無障礙服務直接讀系統配對對話框上的 6 位數，且只在你按下「開始配對」後的 10 分鐘內動作。 |
 | **多語系** | 中文（繁 / 簡）或英文，依系統語系自動切換。 |
+| **中繼橋接** | 對外開一個 `ContentProvider`（`com.omniadb.host.relay`），讓 [5G-Proxy Tailnet Relay](https://github.com/tokyoxpa3/5G-Proxy-Tailnet-Relay) 借本機 adbd 切飛航模式 —— 那個 App 既不需要 root，也不必自己持有 ADB 私鑰。只收四個寫死的動作，且只認 `com.tokyoxpa3.tailnetrelay` 這個套件名。 |
 
 ## 運作原理
 
@@ -89,7 +90,7 @@ CLI 會建置並推送這個 App、授權、拉起常駐、釘埠、再驗證結
 ### B. 純 `adb`（側載）
 
 ```bash
-adb install -r OmniADB-Host-1.1.1.apk
+adb install -r OmniADB-Host-1.1.2.apk
 adb shell am start -n com.omniadb.host/.MainActivity   # 順便把常駐服務叫起來
 ```
 

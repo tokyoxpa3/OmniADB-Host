@@ -97,6 +97,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
+          給 5G-Proxy Tailnet Relay 的窄介面：只接受四個寫死的動作，不提供一般
+          adb shell。exported 但不能設 signature permission（兩邊 APK 不同簽章），
+          改由 provider 用 Binder.getCallingUid() 反查套件名白名單。
+          directBootAware：開機未解鎖時 adbd 可能已由本 App 拉起，讓 relay 也能用。
+          沒有安裝 relay 的裝置，這個元件永遠不會被呼叫。
+        -->
+        <provider
+            android:name=".RelayBridgeProvider"
+            android:authorities="com.omniadb.host.relay"
+            android:directBootAware="true"
+            android:exported="true"
+            android:grantUriPermissions="false" />
     </application>
 
 </manifest>
